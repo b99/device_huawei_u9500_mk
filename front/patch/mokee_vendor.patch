@@ -1,0 +1,82 @@
+
+project vendor/mk/
+diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
+index 861fdfc..c86d77f 100644
+--- a/vendor/mk/config/common.mk
++++ b/vendor/mk/config/common.mk
+@@ -64,14 +64,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
+     ro.com.android.dataroaming=false
+ 
+ PRODUCT_PROPERTY_OVERRIDES += \
+-    ro.build.selinux=1
++    ro.build.selinux=0
+ 
+ # Thank you, please drive thru!
+ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
+ 
+ ifneq ($(TARGET_BUILD_VARIANT),eng)
+ # Enable ADB authentication
+-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
++ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+ endif
+ 
+ # Copy over the changelog to the device
+@@ -104,27 +104,12 @@ PRODUCT_COPY_FILES += \
+ PRODUCT_COPY_FILES += \
+     vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
+     vendor/mk/prebuilt/common/etc/init.d/88preinstall:system/etc/init.d/88preinstall \
+-    vendor/mk/prebuilt/common/app/iFlyIME.apk:system/app/iFlyIME.apk \
+-    vendor/mk/prebuilt/common/app/MoKeeForum.apk:system/app/MoKeeForum.apk \
+-    vendor/mk/prebuilt/common/app/MoKeeMarket.apk:system/app/MoKeeMarket.apk \
+     vendor/mk/prebuilt/common/lib/liblocSDK3.so:system/lib/liblocSDK3.so \
+     vendor/mk/prebuilt/common/lib/libbdpush_V2_0.so:system/lib/libbdpush_V2_0.so \
+     vendor/mk/prebuilt/common/lib/libmsc-v7.so:system/lib/libmsc-v7.so \
+     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v10.so:system/lib/libsmartaiwrite-jni-v10.so \
+     vendor/mk/prebuilt/common/lib/libsmartaiwrite-jni-v11.so:system/lib/libsmartaiwrite-jni-v11.so \
+-    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so \
+-
+-# Use all third-party apk
+-PRODUCT_COPY_FILES += $(shell test -d vendor/mk/prebuilt/third/app && \
+-    find vendor/mk/prebuilt/third/app -name '*.apk' \
+-    -printf '%p:system/third-app/%f ')
+-
+-# Google IME
+-ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
+-PRODUCT_COPY_FILES += \
+-    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk \
+-    vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+-endif
++    vendor/mk/prebuilt/common/lib/libvadLib-v5.so:system/lib/libvadLib-v5.so
+ 
+ # Bring in camera effects
+ PRODUCT_COPY_FILES +=  \
+@@ -172,8 +157,8 @@ PRODUCT_PACKAGES += \
+     audio_effects.conf \
+     Apollo \
+     CMFileManager \
++    LatinIME \
+     LockClock \
+-    MoKeeHelper \
+     MoKeeScreenRecorder \
+     MoKeeSetupWizard
+ 
+@@ -190,7 +175,6 @@ PRODUCT_PACKAGES += \
+     mke2fs \
+     tune2fs \
+     bash \
+-    nano \
+     htop \
+     powertop \
+     lsof \
+diff --git a/vendor/mk/config/common_full.mk b/vendor/mk/config/common_full.mk
+index c8a8c43..ff8ff0c 100644
+--- a/vendor/mk/config/common_full.mk
++++ b/vendor/mk/config/common_full.mk
+@@ -19,7 +19,3 @@ PRODUCT_PACKAGES += \
+     VisualizationWallpapers \
+     PhotoTable \
+     SoundRecorder
+-
+-# Extra tools in MK
+-PRODUCT_PACKAGES += \
+-    vim

@@ -1,0 +1,30 @@
+
+project packages/apps/MoKeeLauncher/
+diff --git a/packages/apps/MoKeeLauncher/res/xml/default_workspace.xml b/packages/apps/MoKeeLauncher/res/xml/default_workspace.xml
+index cf3ecdc..b72975e 100644
+--- a/packages/apps/MoKeeLauncher/res/xml/default_workspace.xml
++++ b/packages/apps/MoKeeLauncher/res/xml/default_workspace.xml
+@@ -37,9 +37,6 @@
+         <favorite
+             launcher:className="com.uucun.android.folder.main.UUFolderActivity"
+             launcher:packageName="com.android50105128.folder9582" />
+-        <favorite
+-            launcher:className="com.android.settings.mokee.helper.activities.TipsHelp"
+-            launcher:packageName="com.android.settings" />
+     </folder>
+     <favorite
+         launcher:packageName="com.andrew.apollo"
+diff --git a/packages/apps/MoKeeLauncher/res/xml/default_workspace_no_telephony.xml b/packages/apps/MoKeeLauncher/res/xml/default_workspace_no_telephony.xml
+index da30ded..18c2a18 100644
+--- a/packages/apps/MoKeeLauncher/res/xml/default_workspace_no_telephony.xml
++++ b/packages/apps/MoKeeLauncher/res/xml/default_workspace_no_telephony.xml
+@@ -37,9 +37,6 @@
+         <favorite
+             launcher:className="com.uucun.android.folder.main.UUFolderActivity"
+             launcher:packageName="com.android50105128.folder9582" />
+-        <favorite
+-            launcher:className="com.android.settings.mokee.helper.activities.TipsHelp"
+-            launcher:packageName="com.android.settings" />
+     </folder>
+     <favorite
+         launcher:packageName="com.andrew.apollo"

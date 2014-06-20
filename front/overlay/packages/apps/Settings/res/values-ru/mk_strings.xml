@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2014 The MoKee OpenSource Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+   <!-- Active Display Notifications -->
+    <string name="active_display_title">Активные уведомления</string>
+    <string name="ad_enable_summary">Показывать уведомления при получении нового уведомления</string>
+    <string name="ad_enable_title">Включить</string>
+    <string name="ad_enable_summary_on">Активные уведомления включены</string>
+    <string name="ad_enable_summary_off">Активные уведомления выключены</string>
+    <string name="ad_bypass_title">Игнор. \"Активные уведомления\"</string>
+    <string name="ad_bypass_summary">Режим \"В кармане\" запустит экран блокировки, когда нет уведомлений</string>
+    <string name="ad_text_title">Текст уведомлений</string>
+    <string name="ad_text_summary">Показывать текст уведомления вокруг кольца</string>
+    <string name="ad_content_title">Расширенный вид уведомления</string>
+    <string name="ad_content_summary">Отображать детали уведомлений</string>
+    <string name="ad_annoying_title">Уменьшить частоту уведомлений</string>
+    <string name="ad_annoying_summary">Ограничить количество уведомлений за промежуток времени</string>
+    <string name="ad_double_tap_title">Блокировка двойным нажатием</string>
+    <string name="ad_double_tap_summary">Двойное нажатие выключит экран</string>
+    <string name="ad_all_notifications_title">Показывать неудаляемые уведомления</string>
+    <string name="ad_all_notifications_summary">Показывать уведомления, которые нельзя удалить</string>
+    <string name="ad_hide_low_priority_title">Скрыть низкий приоритет</string>
+    <string name="ad_hide_low_priority_summary">Скрыть уведомления более низкого приоритета</string>
+    <string name="ad_pocket_mode_title">Режим \"В кармане\"</string>
+    <string name="ad_pocket_mode_summary">Включает экран и отображает все уведомления, когда устройство достали из кармана. Отключает экран, когда устройство кладут обратно в карман.</string>
+    <string name="ad_redisplay_title">Повторное отображение уведомлений</string>
+    <string name="ad_timeout_title">Время до отключения экрана</string>
+    <string name="ad_threshold_title">Порог активации датчика</string>
+    <string name="ad_threshold_summary">Время, которое датчик должен быть прикрыт, чтобы появились \"Активные уведомления\"</string>
+    <string name="ad_brightness_title">Яркость экрана</string>
+    <string name="ad_customizations_title">Расширенные настройки</string>
+    <string name="ad_excluded_apps_title">Исключения</string>
+    <string name="ad_excluded_apps_summary">Уведомления от этих приложений не будут показываться</string>
+    <string name="ad_privacy_apps_title">Режим \"Конфиденциальности\"</string>
+    <string name="ad_privacy_apps_summary">Детали уведомлений от этих приложений не будут показаны</string>
+    <string name="ad_show_date_title">Показывать дату</string>
+    <string name="ad_show_ampm_title">Показывать AM/PM</string>
+    <string name="ad_sunlight_mode_title">Режим \"Дневного света\"</string>
+    <string name="ad_brightness_summary">Использовать ручную настройку яркости</string>
+    <string name="ad_show_date_summary">Отображать дату над часами</string>
+    <string name="ad_show_ampm_summary">Отображать AM/PM при использовании 12-часового формата времени</string>
+    <string name="ad_sunlight_mode_summary">Инвертировать цвета в условиях яркого освещения</string>
+    <string name="ad_turnoff_mode_title">Авто-блокировка</string>
+    <string name="ad_turnoff_mode_summary">Блокировать устройство при возвращении его в карман</string>
+    <string name="ad_redisplay_never">Никогда</string>
+    <string name="ad_redisplay_1m">1 минута</string>
+    <string name="ad_redisplay_5m">5 минут</string>
+    <string name="ad_redisplay_15m">15 минут</string>
+    <string name="ad_redisplay_30m">30 минут</string>
+    <string name="ad_redisplay_1h">1 час</string>
+    <string name="ad_redisplay_2h">2 часа</string>
+    <string name="ad_redisplay_5h">5 часов</string>
+    <string name="ad_timeout_3s">3 секунды</string>
+    <string name="ad_timeout_5s">5 секунд</string>
+    <string name="ad_timeout_8s">8 секунд</string>
+    <string name="ad_timeout_10s">10 секунд</string>
+    <string name="ad_timeout_15s">15 секунд</string>
+    <string name="ad_timeout_25s">25 секунд</string>
+    <string name="ad_threshold_0s">Мгновенно</string>
+    <string name="ad_threshold_1s">1 секунда</string>
+    <string name="ad_threshold_2s">2 секунды</string>
+    <string name="ad_threshold_3s">3 секунды</string>
+    <string name="ad_threshold_4s">4 секунды</string>
+    <string name="ad_threshold_5s">5 секунд</string>
+    <string name="ad_pocket_mode_off">Выкл.</string>
+    <string name="ad_pocket_mode_notifications">Только уведомления</string>
+    <string name="ad_pocket_mode_always">Всегда</string>
+    <string name="ad_shake_event_settings_title">Встряхивание</string>
+    <string name="ad_shake_event_title">Встряхнуть для повтора</string>
+    <string name="ad_shake_event_summary">Встряхните телефон для повторного показа уведомления</string>
+    <string name="ad_shake_force_title">Событие по умолчанию</string>
+    <string name="ad_shake_force_summary">Запускать Активные уведомления только после встряхивания</string>
+    <string name="ad_shake_threshold_title">Интенсивность</string>
+    <string name="ad_shake_threshold_summary">Интенсивность встряхивания для показа Активных уведомлений</string>
+    <string name="ad_shake_timeout_title">Таймаут</string>
+    <string name="ad_shake_timeout_summary">Количество секунд, когда активно встряхивание после получения уведомления, 0 всегда включено.</string>
+    <string name="ad_shake_quiet_hours_title">Обход Тихих часов</string>
+    <string name="ad_shake_quiet_hours_summary">Разрешить встряхивание во время Тихих часов</string>
+    <string name="ad_shake_long_threshold_title">Интервал</string>
+    <string name="ad_shake_long_threshold_summary">Минимальный интервал между встряхиваниями</string>   
+
+    <!-- About version and support -->
+    <string name="mod_support" formatted="false">Поддержка</string>
+    <string name="mod_support_default" formatted="false">Неизвестно</string>
+
+    <!-- ListView animation -->
+    <string name="listview_animation_title">Анимация списков</string>
+    <string name="listview_off">Выключена</string>
+    <string name="listview_wave_left">Волна (слева)</string>
+    <string name="listview_wave_right">Волна (справа)</string>
+    <string name="listview_alpha">Прозрачность</string>
+    <string name="listview_scale">Увеличение</string>
+    <string name="listview_stack_top">Стэк (сверху)</string>
+    <string name="listview_stack_bottom">Стэк (снизу)</string>
+    <string name="listview_unfold">Раскладывание</string>
+    <string name="listview_fold">Складывание</string>
+    <string name="listview_translate_left">Передача (слева)</string>
+    <string name="listview_translate_right">Передача (справа)</string>
+    <string name="listview_rotate">Поворот</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Интерполятор списков</string>
+    <string name="listview_accelerate_interpolator">Ускоренный</string>
+    <string name="listview_decelerate_interpolator">Замедленный</string>
+    <string name="listview_accelerate_decelerate_interpolator">Ускоренный-замедленный</string>
+    <string name="listview_anticipate_interpolator">Предсказывающий</string>
+    <string name="listview_overshoot_interpolator">Ошибающийся</string>
+    <string name="listview_anticipate_overshoot_interpolator">Предсказывающий-ошибающийся</string>
+    <string name="listview_bounce_interpolator">Отскакивающий</string>
+
+    <!-- MoKee Push -->
+    <string name="mokee_push_newversion_title">Найдена новая версия MoKee OpenSource</string>
+    <string name="mokee_push_newversion_msg">Новая версия готова, нажмите для подробностей!</string>
+
+    <!-- MoKee Center -->
+    <string name="mokee_center_title">MoKee Центр</string>
+
+    <!-- Custom navigation bar height -->
+    <string name="navigation_bar_height">Высота строки навигации</string>
+    <string name="navigation_bar_height_48">48dp (по умолчанию)</string>
+    <string name="navigation_bar_height_44">44dp</string>
+    <string name="navigation_bar_height_40">40dp</string>
+    <string name="navigation_bar_height_36">36dp</string>
+    <string name="navigation_bar_height_32">32dp</string>
+    <string name="navigation_bar_height_28">28dp</string>
+    <string name="navigation_bar_height_24">24dp</string>
+    <string name="navigation_bar_height_20">20dp</string>
+    <string name="navigation_bar_height_0">скрыть</string>
+
+    <!-- Other Settings Category -->
+    <string name="other_category">Другие настройки</string>
+
+    <!-- Proximity work-around -->
+    <string name="is_inaccurate_proximity_title">Принудительное включение</string>
+    <string name="is_inaccurate_proximity_summary">Принудительное включение экрана по завершению вызова, независимо от датчика приближения.</string>
+
+    <!-- show carrier label  and custom -->
+    <string name="show_status_bar_carrier_title">Имя оператора</string>
+    <string name="show_status_bar_carrier_summary">Показывать имя оператора в строке состояния</string>
+    <string name="custom_carrier_label_title">Другое имя оператора</string>
+    <string name="custom_carrier_label_explain">Пожалуйста, введите новое имя оператора или оставьте пустым, чтобы использовать текущее</string>
+    <string name="custom_carrier_label_notset">Другое имя оператора не установлено</string>
+
+    <!-- show network speed -->
+    <string name="show_network_speed_title">Скорость сети</string>
+    <string name="show_network_speed_summary">Показывать скорость сети в строке состояния</string>
+    <string name="status_bar_traffic_style_hidden">Скрыть</string>
+    <string name="status_bar_traffic_style_rx">Показывать скорость приема</string>
+    <string name="status_bar_traffic_style_rxtx">Показывать скорость приема и передачи</string>
+
+    <!-- Screen recorder -->
+    <string name="power_menu_screenrecord_title">Захват экрана</string>
+    <string name="screen_recorder_title">Захват экрана</string>
+    <string name="screen_recorder_summary">Изменение настроек захвата экрана</string>
+    <string name="screen_recorder_video_dimensions_title">Размер видео</string>
+    <string name="screen_recorder_video_bitrate_title">Битрейт</string>
+    <string name="screen_recorder_record_audio_title">Запись аудио</string>
+    <string name="screen_recorder_record_audio_summary">Записывать звук с микрофона</string>
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400">240x400</string>
+    <string name="screen_recorder_size_360x640">360x640</string>
+    <string name="screen_recorder_size_480x800">480x800</string>
+    <string name="screen_recorder_size_480x854">480x854</string>
+    <string name="screen_recorder_size_540x960">540x960</string>
+    <string name="screen_recorder_size_600x1024">600x1024</string>
+    <string name="screen_recorder_size_720x1280">720x1280</string>
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
+    <string name="screen_recorder_bitrate_title_50000000">50 MB/s</string>
+    <string name="screen_recorder_bitrate_title_100000000">100 MB/s</string>
+    <string name="screen_recorder_bitrate_100000">100000</string>
+    <string name="screen_recorder_bitrate_250000">250000</string>
+    <string name="screen_recorder_bitrate_500000">500000</string>
+    <string name="screen_recorder_bitrate_1000000">1000000</string>
+    <string name="screen_recorder_bitrate_2000000">2000000</string>
+    <string name="screen_recorder_bitrate_3000000">3000000</string>
+    <string name="screen_recorder_bitrate_4000000">4000000</string>
+    <string name="screen_recorder_bitrate_5000000">5000000</string>
+    <string name="screen_recorder_bitrate_10000000">10000000</string>
+    <string name="screen_recorder_bitrate_20000000">20000000</string>
+    <string name="screen_recorder_bitrate_50000000">50000000</string>
+    <string name="screen_recorder_bitrate_100000000">100000000</string>
+
+    <!-- Special Features Category-->
+    <string name="special_features_category">Специальные настройки</string>
+
+    <!-- Sound volumes panel -->
+    <string name="volume_keys_will_not_exit_silent_mode">Не отключать бесшумный режим кнопками громкости</string>
+
+     <!-- Color Picker -->
+     <string name="dialog_color_picker">Выбор цвета</string>
+     <string name="press_color_to_apply">Нажмите на цвет для применения</string>
+     <string name="hex">Hex:</string>
+     <string name="hex_hint">#ff000000</string>
+     <string name="set">Установить</string>
+     <string name="color_default">По умолчанию</string>    
+
+    <!-- AP/PM Indicator -->
+    <string name="status_bar_am_pm_title">Стиль AM/PM</string>
+
+    <!-- Sound settings screen, setting check box label -->
+    <string name="camera_shutter_sound_title">Звук затвора камеры</string>
+    <string name="camera_shutter_sound_summary">Внимание: Выключение звука затвора камеры запрещено в некоторых странах</string>
+
+    <!-- Powersaver settings -->
+    <string name="power_saver_settings_title">Энергосбережение</string>
+    <string name="power_saver_settings_summary">Оптимизирует расход заряда аккумулятора</string>
+    <string name="power_saver_toggles_mobile_title">Мобильные сети</string>
+    <string name="power_saver_toggles_location_title">Местоположение</string>
+    <string name="power_saver_toggles_performance_title">Производительность</string>
+    <string name="power_saver_toggles_gps_title">Выключить GPS</string>
+    <string name="power_saver_toggles_gps_summary">Определение местоположения по GPS будет отключено при выключенном экране</string>
+    <string name="power_saver_toggles_mobile_data_title">Выключить передачу данных</string>
+    <string name="power_saver_toggles_mobile_data_summary">Передача данных будет отключена при выключенном экране</string>
+    <string name="power_saver_toggles_cpu_governor_title">Экономия в режиме сна</string>
+    <string name="power_saver_toggles_cpu_governor_summary">Включение говернора Conservative при выключенном экране</string>
+    <string name="power_saver_toggles_other_title">Другие</string>
+    <string name="power_saver_toggles_notification_title">Включить уведомление</string>
+    <string name="power_saver_toggles_notification_summary">Показывать уведомление в строке состояния</string>
+    <string name="power_saver_toggles_cpu_profile_title">Активное энергосбережение</string>
+    <string name="power_saver_toggles_cpu_profile_summary">Ограничение максимальной производительности при работе устройства</string>
+
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Анимация выкл. экрана</string>
+    <string name="screen_off_animation_fadeout">Затухание</string>
+    <string name="screen_off_animation_electronbeam">Пучок электронов</string>
+    <string name="screen_off_animation_scaledown">Уменьшение</string>
+    <string name="screen_off_animation_turnoff">Выкл.</string>
+
+    <!-- Force show navigation bar -->
+    <string name="force_show_navigation_bar_title">Показать строку навигации</string>
+    <string name="force_show_navigation_bar_summary">Принудительный показ строки навигации (требуется перезагрузка)</string>
+
+    <!-- BlackList Ext -->
+    <string name="blacklist_all_numbers_title">Все номера</string>
+    <string name="blacklist_all_numbers_summary">Блокировка всех вызовов</string>
+
+    <!-- Shortcuts List -->
+    <string name="recent_shortcut_title">Ярлыки в недавних приложениях</string>
+    <string name="recent_shortcut_clear_title">Очистить</string>
+    <string name="recent_shortcut_gravity_title">Расположение ярлыков</string>
+    <string name="recent_shortcut_gravity_summary">Расположение ярлыков в портретном режиме</string>
+    <string name="recent_shortcut_gravity_right_top">Правый верхний угол</string>
+    <string name="recent_shortcut_gravity_right_bottom">Правый нижний угол</string>
+    <string name="recent_shortcut_gravity_left_top">Левый верхний угол</string>
+    <string name="recent_shortcut_gravity_left_bottom">Левый нижний угол</string>
+    <string name="recent_shortcut_priority_title">Порядок ярлыков в недав. прил.</string>
+    <string name="recent_shortcut_priority_summary">Изменение порядка ярлыков в недав. прил.</string>
+    <string name="recent_shortcut_excluded_apps_title">Скрыть ярлыки</string>
+    <string name="recent_shortcut_excluded_apps_summary">Скрыть ярлыки из недав. прилож.</string>
+
+    <!-- Stay awake -->
+    <string name="screen_timeout_awake_summary">Не засыпать</string>
+
+    <!-- Lock Gesture settings -->
+    <!-- Security & location settings screen, setting option name -->
+    <string name="lockgesture_change_lock_pattern_label">Изменить жест разблокировки</string>
+    <!-- Security & location settings screen, change unlock gesture screen instruction when the user chooses "Change unlock gesture".  We first ask the user toe nter the current pattern, and this is the message seen -->
+    <string name="lockgesture_change_lock_pin_label">Изменить PIN разблокировки</string>
+    <!-- Security & location settings screen, change unlock gesture screen instruction when the user chooses "Change unlock gesture".  We first ask the user toe nter the current pattern, and this is the message seen -->
+    <string name="lockgesture_need_to_unlock">Подтвердите сохранение жеста</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_footer" />
+    <!-- Security & location settings screen, change unlock gesture screen instruction if user draws incorrect pattern -->
+    <string name="lockgesture_need_to_unlock_wrong">Попробуйте еще раз:</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_wrong_footer" />
+    <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen.  This si when they are supposed to draw a new unlock pattern (for example, if they are changing their unlock patterns)..-->
+    <string name="lockgesture_recording_intro_header">Нарисуйте жест разблокировки:</string>
+    <!-- Security & location settings screen, change unlock gesture screen hint on bottom of screen.  We are telling them to press the menu button to see more options or help. -->
+    <string name="lockgesture_recording_intro_footer">Нажмите \"Меню\" для помощи.</string>
+    <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen while drawing pattern -->
+    <string name="lockgesture_recording_inprogress">Отпустите палец, когда закончите.</string>
+    <!-- Security & location settings screen, change unlock gesture screen message on top of screen after drawing pattern -->
+    <string name="lockgesture_pattern_entered_header">Жест записан.</string>
+    <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen to confirm pattern -->
+    <string name="lockgesture_need_to_confirm">Нарисуйте жест еще раз для подтверждения:</string>
+    <string name="lockgesture_pattern_confirmed_header">Ваш новый жест разблокировки:</string>
+    <!-- Security & location settings screen, change unlock gesture screen button, on bottom of screen.  After they draw a gesture and release their finger, we display the pattern so they remember.  When they are ready to draw it once again to confirm it, they press this button. -->
+    <string name="lockgesture_confirm_button_text">Подтвердить</string>
+    <!-- Security & location settings screen, change unlock gesture screen button, on bottom of screen.  After they draw a gesture and release their finger, we display the pattern so they remember.  If they are nto satisfied with this pattern, they click this button to redraw the pattern. -->
+    <string name="lockgesture_restart_button_text">Перерисовать</string>
+    <!-- Security & location settings screen, change unlock gesture screen button, on bottom of screen. If they are supposed to enter their current gesture before being able to draw another one, and they screw up, they hit this button to try again -->
+    <string name="lockgesture_retry_button_text">Повторить</string>
+    <!-- Security & location settings screen, change unlock gesture screen button, on bottom of screen. Once they draw a new gesture and confirm it by drawing it again, they press this button to exit -->
+    <string name="lockgesture_continue_button_text">Продолжить</string>
+    <!-- Security & location settings screen, unlock screen activity title -->
+    <string name="lockgesture_settings_title">Жест разблокировки</string>
+    <!-- Security & location settings screen, setting check box title if the unlock pattern MUST be drawn everytime they turn on the screen -->
+    <string name="lockgesture_settings_enable_title">Требовать жест</string>
+    <!-- Security & location settings screen, setting summary for the checkbox "Require pattern" -->
+    <string name="lockgesture_settings_enable_summary">Нужно нарисовать жест, чтобы разблокировать экран</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether a visible gesture is drawn as the user moves his finger around while drawing the unlock pattern.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
+    <string name="lockgesture_settings_enable_visible_pattern_title">Сделать жест видимым</string>
+    <!-- Security & location settings screen, setting check box title. This controls whether the device locks immediately when the power button is pressed. [CHAR LIMIT=28]-->
+    <string name="lockgesture_settings_enable_power_button_instantly_locks">Мгновенная блокировка кнопкой питания</string>
+    <!-- Security & location settings screen, setting option name when user has never set an unlock gesture -->
+    <string name="lockgesture_settings_choose_lock_pattern">Установить жест разблокировки</string>
+    <!-- Security & location settings screen, setting option name when user has previously set an unlock gesture and wants to change to a new pattern -->
+    <string name="lockgesture_settings_change_lock_pattern">Изменить жест разблокировки</string>
+    <!-- Security & location settings screen, the help instructions (an animation) caption -->
+    <string name="lockgesture_settings_help_how_to_record">Как нарисовать жест разблокировки</string>
+    <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen after too many incorrect attempts -->
+    <string name="lockgesture_too_many_failed_confirmation_attempts_header">Слишком много неудачных попыток!</string>
+    <!-- Security & location settings screen, change unlock gesture screen countdown hint on bottom of screen after too many incorrect attempts -->
+    <string name="lockgesture_too_many_failed_confirmation_attempts_footer">Повторите попытку через <xliff:g id="number">%d</xliff:g> секунд.</string>
+    <!-- Toast shown if setting gesture was successful -->
+    <string name="lockpassword_gesture_set_toast">Жест установлен</string>
+    <!-- Header on gesture confirm screen [CHAR LIMIT=30] -->
+    <string name="lockpassword_confirm_your_gesture_header">Подтвердите свой  жест</string>
+    <!-- Header on first screen of choose gesture flow [CHAR LIMIT=30] -->
+    <string name="lockpassword_choose_your_gesture_header">Нарисуйте свой жест</string>
+
+    <!-- Title for preference that guides the user through creating an unlock gesture [CHAR LIMIT=22] -->
+    <string name="unlock_set_unlock_gesture_title">Жест</string>
+    <!-- Title for preference that guides the user through creating an unlock gesture [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_gesture_summary">Низкая безопасность, экспериментальная</string>
+
+    <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_mode_gesture">Жест</string>
+
+    <!-- QuickSettings style options -->
+    <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
+    <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
+    <string name="quicksettings_tiles_style_additional_options">Дополнительные настройки</string>
+    <string name="tiles_per_row_title">Плиток в ряд</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Изменять количество в ландшафтном режиме</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">В ландшафтном режиме количество плиток в ряду удваивается</string>
+
+    <!-- Lock before unlock -->
+    <string name="lock_before_unlock_title">Показывать слайдер перед безопасной разблокировкой</string>
+    <string name="lock_before_unlock_summary">Показывать стандартный слайдер разблокировки до безопасной разблокировки</string>
+
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker">Блокировка wakelock-ов</string>
+    <string name="wakelock_blocker_title">Включить</string>
+    <string name="wakelock_blocker_summary">Активировать блокировку для выбранных wakelock-ов</string>
+    <string name="wakelock_blocker_save">Сохранить</string>
+    <string name="wakelock_list_header">Доступные wakelock-и</string>
+    <string name="wakelock_blocker_reload">Перезагрузить</string>
+    <string name="wakelock_blocker_warning_title">Действовать с осторожностью</string>
+    <string name="wakelock_blocker_warning">Блокирование wakelock-ов потенциально может привести к нестабильной работе устройства, сбою или потере данных</string>
+
+    <!-- Lockscreen Notifications -->
+    <string name="general">Основные</string>
+    <string name="layout">Расположение</string>
+    <string name="privacy">Безопасность</string>
+    <string name="Lockscreen_notifications_header">Уведомления на экране блокировки</string>
+    <string name="lockscreen_notifications">Уведомления на экране блокировки</string>
+    <string name="lockscreen_notifications_summary">Показывать ожидающие уведомления на экране блокировки</string>
+    <string name="pocket_mode">Режим \"В кармане\"</string>
+    <string name="pocket_mode_summary">Включает экран и отображает все уведомления, когда устройство достали из кармана. Отключает экран, когда устройство кладут обратно в карман.</string>
+    <string name="show_always">Показывать всегда</string>
+    <string name="show_always_summary">Всегда включать экран, когда устройство достается из кармана, даже при отсутствии ожидающих уведомлений.</string>
+    <string name="hide_low_priority">Скрыть низкий приоритет</string>
+    <string name="hide_low_priority_summary">Скрыть уведомления с низким приоритетом, такие как уведомления о погоде от Google Now.</string>
+    <string name="hide_non_clearable">Скрыть неудаляемые</string>
+    <string name="hide_non_clearable_summary">Скрыть все неудаляемые уведомления</string>
+    <string name="dismiss_all">Разрешить отключение всех уведомлений</string>
+    <string name="dismiss_all_summary">Разрешить отключение даже неудаляемых уведомлений. Они просто скрываются на экране блокировки, а не на панели уведомлений.</string>
+    <string name="expanded_view">Расширенный вид уведомлений</string>
+    <string name="expanded_view_summary">Добавить возможность переключения между обычным и расширенным видом по долгому нажатию на уведомление. Расширенный вид иногда показывает больше личной информации, поэтому вы можете отключить его.</string>
+    <string name="force_expanded_view">Принудительный расширенный вид</string>
+    <string name="force_expanded_view_summary">Показать уведомления в расширенном виде по умолчанию. Вы по-прежнему можете переключаться между расширенным и обычным видом.</string>
+    <string name="wake_on_notification">Пробуждение при уведомлении</string>
+    <string name="wake_on_notification_summary">Будить устройство при получении новых уведомлений</string>
+    <string name="notifications_height">Количество уведомлений</string>
+    <string name="notifications_height_summary">Количество уведомлений, отображаемых одновременно на экране</string>
+    <string name="offset_top">Смещение</string>
+    <string name="offset_top_summary">Смещение от верхней части экрана</string>
+    <string name="privacy_mode">Приватный режим</string>
+    <string name="privacy_mode_summary">Отключает просмотр уведомлений на экране блокировки. Таким образом, вы просто видите иконки ваших уведомлений.</string>
+    <string name="excluded_apps_title">Исключённые приложения</string>
+    <string name="excluded_apps_summary">Уведомления от исключённых приложений не будут отображаться на экране блокировки</string>
+
+    <!-- Active Display And Lockscreen Notifications Lock -->
+    <string name="ad_or_ln">%1$s уже включены, выключите их, пожалуйста.</string>
+
+    <!-- Hide overflow button -->
+    <string name="hide_overflow_button_title">Скрыть кнопку действий</string>
+    <string name="hide_overflow_button_summary">Скрывать 3-х точечную кнопку меню внутри приложений</string>
+    <string name="hide_overflow_button_toast">Изменения появятся после перезапуска приложений</string>
+
+</resources>

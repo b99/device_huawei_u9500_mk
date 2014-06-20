@@ -1,0 +1,194 @@
+
+project packages/apps/Settings/
+diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
+index 178b186..d287ae6 100644
+--- a/packages/apps/Settings/AndroidManifest.xml
++++ b/packages/apps/Settings/AndroidManifest.xml
+@@ -73,13 +73,6 @@
+     <uses-permission android:name="android.permission.READ_PHONE_BLACKLIST" />
+     <uses-permission android:name="android.permission.CHANGE_PHONE_BLACKLIST" />
+ 
+-    <!-- MOKEE PUSH PERMISSION START -->
+-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+-    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+-    <!-- MOKEE PUSH PERMISSION END -->
+-
+     <!-- MOKEE HELPER PERMISSION START -->
+     <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
+     <!-- MOKEE HELPER PERMISSION END -->
+@@ -1954,25 +1947,6 @@
+         <!-- MOKEE ACTIVITIES END -->
+ 
+         <!-- MOKEE HELPER START -->
+-        <activity android:name=".mokee.helper.activities.TipsHelp"
+-            android:icon="@drawable/ic_forum"
+-            android:label="@string/tips_help_title"
+-            android:theme="@style/ActivityTransparent"
+-            android:excludeFromRecents="true" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-
+-        <activity android:name=".mokee.helper.activities.MoKeeCenter"
+-            android:label="@string/mokee_center_title" >
+-            <intent-filter>
+-                <action android:name="com.mokee.mkupdater.action.MOKEE_CENTER" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </activity>
+-
+         <service
+             android:name="com.mokee.helper.service.MKDashClockExtension"
+             android:icon="@drawable/ic_tab_installed"
+@@ -1989,36 +1963,7 @@
+                 android:name="description"
+                 android:value="@string/extension_description" />
+         </service>
+-
+-        <service android:name="com.mokee.helper.service.DownLoadService" />
+-
+-        <service android:name="com.mokee.helper.service.UpdateCheckService" />
+-
+-        <receiver android:name="com.mokee.helper.receiver.UpdateCheckReceiver" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name="com.mokee.helper.receiver.DownloadReceiver" >
+-            <intent-filter>
+-                <action android:name="com.mokee.mkupdater.action.DOWNLOAD_COMPLETED" />
+-                <action android:name="com.mokee.mkupdater.action.START_DOWNLOAD" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name="com.mokee.helper.receiver.NotificationClickReceiver" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name="com.mokee.helper.receiver.CheckFinishReceiver" >
+-            <intent-filter>
+-                <action android:name="com.mokee.mkupdater.action.UPDATE_CHECK_FINISHED" />
+-            </intent-filter>
+-        </receiver>
++    
+         <!-- MOKEE HELPER END -->
+ 
+         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
+@@ -2206,87 +2151,6 @@
+             </intent-filter>
+         </receiver>
+ 
+-        <!-- MOKEE ANONYMOUS STATISTICS START -->
+-        <receiver android:name=".mkstats.ReportingServiceManager"
+-            android:enabled="true"
+-            android:exported="false"
+-            android:label="ReportingServiceManager">
+-            <intent-filter>
+-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <service android:label="ReportingService"
+-            android:enabled="true"
+-            android:exported="false"
+-            android:name=".mkstats.ReportingService">
+-        </service>
+-
+-        <service android:label="UpdatingService"
+-            android:enabled="true"
+-            android:exported="false"
+-            android:name=".mkstats.UpdatingService">
+-        </service>
+-        <!-- MOKEE ANONYMOUS STATISTICS END -->
+-
+-        <!-- MOKEE PUSH SERVICE START -->
+-        <receiver android:name=".mkpush.PushingServiceManager"
+-            android:label="PushingServiceManager" >
+-            <intent-filter>
+-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name=".mkpush.PushingMessageReceiver"
+-            android:label="PushingMessageReceiver" >
+-            <intent-filter>
+-                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+-                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+-                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <service android:name=".mkpush.PushingService"
+-            android:label="PushingService"
+-            android:enabled="true"
+-            android:exported="false">
+-        </service>
+-
+-        <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
+-            android:process=":mokeepushservice" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+-                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+-                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name="com.baidu.android.pushservice.RegistrationReceiver"
+-            android:process=":mokeepushservice" >
+-            <intent-filter>
+-                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+-                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+-            </intent-filter>
+-            <intent-filter>
+-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+-                <data android:scheme="package" />
+-            </intent-filter>                   
+-        </receiver>    
+-
+-        <service android:name="com.baidu.android.pushservice.PushService"
+-            android:exported="true"
+-            android:process=":mokeepushservice"
+-            android:label="MoKeePushService" >
+-            <intent-filter >
+-                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE"/>
+-            </intent-filter>
+-        </service>
+-
+-        <meta-data android:name="api_key" android:value="MRTYpHDAzBM5D3pfhkj9V9Gh" />
+-        <!-- MOKEE PUSH SERVICE END -->
+-
+         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
+         <receiver android:name=".users.ProfileUpdateReceiver">
+             <intent-filter>
+diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
+index 7e9c7a4..8b57107 100644
+--- a/packages/apps/Settings/res/xml/settings_headers.xml
++++ b/packages/apps/Settings/res/xml/settings_headers.xml
+@@ -303,17 +303,6 @@
+         android:icon="@drawable/ic_settings_performance"
+         android:title="@string/performance_settings_title" />
+ 
+-    <!-- MoKee Center -->
+-    <header
+-        android:id="@+id/mokee_center"
+-        android:icon="@drawable/ic_mokee_center"
+-        android:title="@string/mokee_center_title">
+-        <intent
+-            android:action="android.intent.action.MAIN"
+-            android:targetPackage="com.android.settings"
+-            android:targetClass="com.android.settings.mokee.helper.activities.MoKeeCenter" />
+-    </header>
+-
+     <!-- About Device -->
+     <header
+         android:id="@+id/about_settings"
