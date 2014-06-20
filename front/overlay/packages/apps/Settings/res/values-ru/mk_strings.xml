@@ -405,4 +405,10 @@
     <string name="hide_overflow_button_summary">Скрывать 3-х точечную кнопку меню внутри приложений</string>
     <string name="hide_overflow_button_toast">Изменения появятся после перезапуска приложений</string>
 
+    <!-- Animation Settings -->
+    <string name="animation_settings_title">анимация</string>
+
+    <!-- Active Display & LockScreen Notification & RecentShortcut -->
+    <string name="smartcontrol_settings_title">Надстройки</string> 
+
 </resources>
