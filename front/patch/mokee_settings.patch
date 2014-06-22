@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index 178b186..d287ae6 100644
+index 65e3231..2245586 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,13 +73,6 @@
@@ -18,7 +18,7 @@ index 178b186..d287ae6 100644
      <!-- MOKEE HELPER PERMISSION START -->
      <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
      <!-- MOKEE HELPER PERMISSION END -->
-@@ -1954,25 +1947,6 @@
+@@ -1945,25 +1938,6 @@
          <!-- MOKEE ACTIVITIES END -->
  
          <!-- MOKEE HELPER START -->
@@ -44,7 +44,7 @@ index 178b186..d287ae6 100644
          <service
              android:name="com.mokee.helper.service.MKDashClockExtension"
              android:icon="@drawable/ic_tab_installed"
-@@ -1989,36 +1963,7 @@
+@@ -1980,36 +1954,7 @@
                  android:name="description"
                  android:value="@string/extension_description" />
          </service>
@@ -82,7 +82,7 @@ index 178b186..d287ae6 100644
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2206,87 +2151,6 @@
+@@ -2197,87 +2142,6 @@
              </intent-filter>
          </receiver>
  
@@ -171,10 +171,10 @@ index 178b186..d287ae6 100644
          <receiver android:name=".users.ProfileUpdateReceiver">
              <intent-filter>
 diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
-index 7e9c7a4..8b57107 100644
+index 379db68..b1ac289 100644
 --- a/packages/apps/Settings/res/xml/settings_headers.xml
 +++ b/packages/apps/Settings/res/xml/settings_headers.xml
-@@ -303,17 +303,6 @@
+@@ -320,17 +320,6 @@
          android:icon="@drawable/ic_settings_performance"
          android:title="@string/performance_settings_title" />
  
