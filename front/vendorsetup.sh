@@ -23,4 +23,3 @@
 add_lunch_combo mk_front-userdebug
 add_lunch_combo mk_front-eng
 sh device/huawei/front/patch/applypatch.sh
-find . -name "*.xml.orig" -delete

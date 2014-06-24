@@ -13,5 +13,9 @@ for patch in `ls $dir/*.patch` ; do
 	patch -p1 -N -i $patch -r - -d $top
 done
 
+rm vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so
+
+find . -name "*.xml.orig" -delete
+
 echo "Copy linaro toolchain"
 cp -r ../../linaro-4.8 $top/prebuilts/gcc/linux-x86/arm/

@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index 65e3231..2245586 100644
+index a639368..eff46e3 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,13 +73,6 @@
@@ -167,9 +167,9 @@ index 65e3231..2245586 100644
 -        <meta-data android:name="api_key" android:value="MRTYpHDAzBM5D3pfhkj9V9Gh" />
 -        <!-- MOKEE PUSH SERVICE END -->
 -
-         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
-         <receiver android:name=".users.ProfileUpdateReceiver">
-             <intent-filter>
+         <!-- MOKEE DONATE START -->
+         <service android:name="com.paypal.android.sdk.payments.PayPalService"
+             android:exported="false" />
 diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
 index 379db68..b1ac289 100644
 --- a/packages/apps/Settings/res/xml/settings_headers.xml
