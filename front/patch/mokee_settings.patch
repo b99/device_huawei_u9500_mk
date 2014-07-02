@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index a639368..eff46e3 100644
+index b77d9b8..cbe7235 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,13 +73,6 @@
@@ -18,7 +18,7 @@ index a639368..eff46e3 100644
      <!-- MOKEE HELPER PERMISSION START -->
      <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
      <!-- MOKEE HELPER PERMISSION END -->
-@@ -1945,25 +1938,6 @@
+@@ -1947,25 +1940,6 @@
          <!-- MOKEE ACTIVITIES END -->
  
          <!-- MOKEE HELPER START -->
@@ -44,7 +44,7 @@ index a639368..eff46e3 100644
          <service
              android:name="com.mokee.helper.service.MKDashClockExtension"
              android:icon="@drawable/ic_tab_installed"
-@@ -1980,36 +1954,7 @@
+@@ -1982,37 +1956,6 @@
                  android:name="description"
                  android:value="@string/extension_description" />
          </service>
@@ -70,6 +70,7 @@ index a639368..eff46e3 100644
 -        <receiver android:name="com.mokee.helper.receiver.NotificationClickReceiver" >
 -            <intent-filter>
 -                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+-                <action android:name="com.mokee.mkupdater.action.NOTIFICATION_CLICKED" />
 -            </intent-filter>
 -        </receiver>
 -
@@ -78,11 +79,10 @@ index a639368..eff46e3 100644
 -                <action android:name="com.mokee.mkupdater.action.UPDATE_CHECK_FINISHED" />
 -            </intent-filter>
 -        </receiver>
-+    
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2197,87 +2142,6 @@
+@@ -2200,87 +2143,6 @@
              </intent-filter>
          </receiver>
  
@@ -171,10 +171,10 @@ index a639368..eff46e3 100644
          <service android:name="com.paypal.android.sdk.payments.PayPalService"
              android:exported="false" />
 diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
-index 379db68..b1ac289 100644
+index f369fae..206445a 100644
 --- a/packages/apps/Settings/res/xml/settings_headers.xml
 +++ b/packages/apps/Settings/res/xml/settings_headers.xml
-@@ -320,17 +320,6 @@
+@@ -336,17 +336,6 @@
          android:icon="@drawable/ic_settings_performance"
          android:title="@string/performance_settings_title" />
  
@@ -191,4 +191,4 @@ index 379db68..b1ac289 100644
 -
      <!-- About Device -->
      <header
-         android:id="@+id/about_settings"
+         settings:includeXmlForSearch="@xml/device_info_settings"
