@@ -55,8 +55,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.front \
     libedid \
     libion_ti \
-    libstagefrighthw \
-    power.omap4
+    libstagefrighthw
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
