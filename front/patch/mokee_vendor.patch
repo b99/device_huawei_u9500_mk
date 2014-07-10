@@ -1,7 +1,7 @@
 
 project vendor/mk/
 diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
-index 49bf257..6db3ac0 100644
+index 2330f35..11adcc3 100644
 --- a/vendor/mk/config/common.mk
 +++ b/vendor/mk/config/common.mk
 @@ -8,7 +8,7 @@ endif
@@ -66,10 +66,10 @@ index 49bf257..6db3ac0 100644
 +    LatinIME \
      LockClock \
 -    MoKeeHelper \
+     MoKeeHome \
      MoKeeScreenRecorder \
      MoKeeSetupWizard
- 
-@@ -188,7 +174,6 @@ PRODUCT_PACKAGES += \
+@@ -189,7 +175,6 @@ PRODUCT_PACKAGES += \
      mke2fs \
      tune2fs \
      bash \
