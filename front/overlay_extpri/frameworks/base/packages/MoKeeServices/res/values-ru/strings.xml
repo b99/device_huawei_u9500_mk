@@ -28,6 +28,6 @@
     <string name="quiet_hours_notification_title">Тихие часы</string>
     <string name="quiet_hours_notification_ticker">Тихие часы</string>
     <string name="quiet_hours_notification_text">Тихие часы активны</string>
-    <string name="quiet_hours_notification_wait">Тихие часы неактивны</string>
+    <string name="quiet_hours_notification_wait">Отключить тихие часы</string>
 
 </resources>
