@@ -90,11 +90,17 @@ on fs
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/modemnvm1 /modem/nvm1 wait noatime nosuid nodev
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/modemnvm2 /modem/nvm2 wait noatime nosuid nodev
 
+    setprop ro.crypto.fuse_sdcard true
+    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
+
     # TIMER_SLACK
     write /dev/cpuctl/apps/bg_non_interactive/timer_slack.min_slack_ns 100000000
 
-    setprop ro.crypto.fuse_sdcard true
-    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
+    # enable and setup UKSM
+    write /sys/kernel/mm/uksm/run 1
+    write /sys/kernel/mm/uksm/cpu_governor quiet
+    write /sys/kernel/mm/uksm/max_cpu_percentage 10
+    write /sys/kernel/mm/uksm/sleep_millisecs 500
 
     # ril control auto-suspend
     chmod 0660 /sys/bus/usb/devices/usb1/power/control
