@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index b77d9b8..cbe7235 100644
+index f1be620..81d2273 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,13 +73,6 @@
@@ -18,12 +18,12 @@ index b77d9b8..cbe7235 100644
      <!-- MOKEE HELPER PERMISSION START -->
      <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
      <!-- MOKEE HELPER PERMISSION END -->
-@@ -1947,25 +1940,6 @@
+@@ -1947,37 +1940,6 @@
          <!-- MOKEE ACTIVITIES END -->
  
          <!-- MOKEE HELPER START -->
 -        <activity android:name=".mokee.helper.activities.TipsHelp"
--            android:icon="@drawable/ic_forum"
+-            android:icon="@drawable/ic_launcher_tips_help"
 -            android:label="@string/tips_help_title"
 -            android:theme="@style/ActivityTransparent"
 -            android:excludeFromRecents="true" >
@@ -33,8 +33,20 @@ index b77d9b8..cbe7235 100644
 -            </intent-filter>
 -        </activity>
 -
+-        <activity android:name=".mokee.helper.activities.MoKeeForum"
+-            android:icon="@drawable/ic_launcher_forum"
+-            android:label="@string/mokee_forum_title"
+-            android:theme="@style/ActivityTransparent"
+-            android:excludeFromRecents="true" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-
 -        <activity android:name=".mokee.helper.activities.MoKeeCenter"
--            android:label="@string/mokee_center_title" >
+-            android:label="@string/mokee_center_title"
+-            android:parentActivityName="Settings" >
 -            <intent-filter>
 -                <action android:name="com.mokee.mkupdater.action.MOKEE_CENTER" />
 -                <category android:name="android.intent.category.DEFAULT" />
@@ -44,7 +56,7 @@ index b77d9b8..cbe7235 100644
          <service
              android:name="com.mokee.helper.service.MKDashClockExtension"
              android:icon="@drawable/ic_tab_installed"
-@@ -1982,37 +1956,6 @@
+@@ -1994,37 +1956,6 @@
                  android:name="description"
                  android:value="@string/extension_description" />
          </service>
@@ -82,7 +94,7 @@ index b77d9b8..cbe7235 100644
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2200,87 +2143,6 @@
+@@ -2212,87 +2143,6 @@
              </intent-filter>
          </receiver>
  
