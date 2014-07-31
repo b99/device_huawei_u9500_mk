@@ -328,7 +328,4 @@
 
     <!-- Enable wifi display -->
     <bool translatable="false" name="config_enableWifiDisplay">true</bool>
-
-    <!-- Can we change the battery color? -->
-    <bool name="config_multiColorBatteryLed">true</bool>
 </resources>
