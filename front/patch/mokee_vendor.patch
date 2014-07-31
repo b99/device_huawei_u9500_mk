@@ -1,7 +1,7 @@
 
 project vendor/mk/
 diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
-index b8ce209..8d99154 100644
+index 78fe164..6c484a7 100644
 --- a/vendor/mk/config/common.mk
 +++ b/vendor/mk/config/common.mk
 @@ -8,7 +8,7 @@ endif
@@ -13,24 +13,7 @@ index b8ce209..8d99154 100644
  MOKEEHELPER_PACKAGE_PREFIX := com.android.settings.mokee.mokeehelper
  
  ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
-@@ -64,14 +64,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
-     ro.com.android.dataroaming=false
- 
- PRODUCT_PROPERTY_OVERRIDES += \
--    ro.build.selinux=1
-+    ro.build.selinux=0
- 
- # Thank you, please drive thru!
- PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
- 
- ifneq ($(TARGET_BUILD_VARIANT),eng)
- # Enable ADB authentication
--ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
-+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
- endif
- 
- # Copy over the changelog to the device
-@@ -107,26 +107,13 @@ PRODUCT_COPY_FILES += \
+@@ -107,25 +107,13 @@ PRODUCT_COPY_FILES += \
  # MoKee prebuilts
  PRODUCT_COPY_FILES += \
      vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
@@ -51,14 +34,13 @@ index b8ce209..8d99154 100644
 -# Google IME
 -ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 -PRODUCT_COPY_FILES += \
--    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk \
--    vendor/mk/prebuilt/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+-    vendor/mk/prebuilt/common/app/GoogleIME.apk:system/app/GoogleIME.apk
 -endif
 -
  # Bring in camera effects
  PRODUCT_COPY_FILES +=  \
      vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-@@ -173,8 +160,8 @@ PRODUCT_PACKAGES += \
+@@ -172,8 +160,8 @@ PRODUCT_PACKAGES += \
      audio_effects.conf \
      Apollo \
      CMFileManager \
@@ -68,7 +50,7 @@ index b8ce209..8d99154 100644
      MoKeeHome \
      MoKeeScreenRecorder \
      MoKeeSetupWizard
-@@ -192,7 +179,6 @@ PRODUCT_PACKAGES += \
+@@ -191,7 +179,6 @@ PRODUCT_PACKAGES += \
      mke2fs \
      tune2fs \
      bash \

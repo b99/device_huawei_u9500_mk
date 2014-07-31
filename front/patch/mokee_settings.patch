@@ -1,24 +1,28 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index f1be620..81d2273 100644
+index 6f94c5b..b1a667d 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
-@@ -73,13 +73,6 @@
+@@ -73,17 +73,6 @@
      <uses-permission android:name="android.permission.READ_PHONE_BLACKLIST" />
      <uses-permission android:name="android.permission.CHANGE_PHONE_BLACKLIST" />
  
 -    <!-- MOKEE PUSH PERMISSION START -->
--    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
--    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
--    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+-    <permission android:name="com.android.settings.permission.JPUSH_MESSAGE" android:protectionLevel="signature" />
+-    <uses-permission android:name="com.android.settings.permission.JPUSH_MESSAGE" />
+-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 -    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 -    <!-- MOKEE PUSH PERMISSION END -->
 -
      <!-- MOKEE HELPER PERMISSION START -->
      <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
      <!-- MOKEE HELPER PERMISSION END -->
-@@ -1947,37 +1940,6 @@
+@@ -1953,37 +1942,6 @@
          <!-- MOKEE ACTIVITIES END -->
  
          <!-- MOKEE HELPER START -->
@@ -56,7 +60,7 @@ index f1be620..81d2273 100644
          <service
              android:name="com.mokee.helper.service.MKDashClockExtension"
              android:icon="@drawable/ic_tab_installed"
-@@ -1994,37 +1956,6 @@
+@@ -2000,37 +1958,6 @@
                  android:name="description"
                  android:value="@string/extension_description" />
          </service>
@@ -94,7 +98,7 @@ index f1be620..81d2273 100644
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2212,87 +2143,6 @@
+@@ -2218,113 +2145,6 @@
              </intent-filter>
          </receiver>
  
@@ -123,6 +127,57 @@ index f1be620..81d2273 100644
 -        <!-- MOKEE ANONYMOUS STATISTICS END -->
 -
 -        <!-- MOKEE PUSH SERVICE START -->
+-        <activity
+-            android:name="cn.jpush.android.ui.PushActivity"
+-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+-            android:configChanges="orientation|keyboardHidden" >
+-            <intent-filter>
+-                <action android:name="cn.jpush.android.ui.PushActivity" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-                <category android:name="com.android.settings" />
+-            </intent-filter>
+-        </activity>
+-
+-        <service
+-            android:name="cn.jpush.android.service.DownloadService"
+-            android:enabled="true"
+-            android:exported="false" >
+-        </service>
+-
+-        <service
+-            android:name="cn.jpush.android.service.PushService"
+-            android:enabled="true"
+-            android:exported="false">
+-            <intent-filter>
+-                <action android:name="cn.jpush.android.intent.REGISTER" />
+-                <action android:name="cn.jpush.android.intent.REPORT" />
+-                <action android:name="cn.jpush.android.intent.PushService" />
+-                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+-            </intent-filter>
+-        </service>
+-
+-        <receiver
+-            android:name="cn.jpush.android.service.PushReceiver"
+-            android:enabled="true" >
+-             <intent-filter android:priority="1000">
+-                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+-                <category android:name="com.android.settings" />
+-            </intent-filter>
+-
+-            <intent-filter>
+-                <action android:name="android.intent.action.USER_PRESENT" />
+-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+-            </intent-filter>
+-
+-            <intent-filter>
+-                <action android:name="android.intent.action.PACKAGE_ADDED" />
+-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+-                <data android:scheme="package" />
+-            </intent-filter>
+-        </receiver>
+-
+-        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+-
 -        <receiver android:name=".mkpush.PushingServiceManager"
 -            android:label="PushingServiceManager" >
 -            <intent-filter>
@@ -131,57 +186,32 @@ index f1be620..81d2273 100644
 -        </receiver>
 -
 -        <receiver android:name=".mkpush.PushingMessageReceiver"
--            android:label="PushingMessageReceiver" >
+-            android:label="PushingMessageReceiver"
+-            android:enabled="true" >
 -            <intent-filter>
--                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
--                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
--                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+-                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+-                <action android:name="cn.jpush.android.intent.CONNECTION" />
+-                <category android:name="com.android.settings" />
 -            </intent-filter>
 -        </receiver>
 -
--        <service android:name=".mkpush.PushingService"
--            android:label="PushingService"
--            android:enabled="true"
--            android:exported="false">
--        </service>
--
--        <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
--            android:process=":mokeepushservice" >
--            <intent-filter>
--                <action android:name="android.intent.action.BOOT_COMPLETED" />
--                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
--                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
--                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
--            </intent-filter>
--        </receiver>
--
--        <receiver android:name="com.baidu.android.pushservice.RegistrationReceiver"
--            android:process=":mokeepushservice" >
--            <intent-filter>
--                <action android:name="com.baidu.android.pushservice.action.METHOD" />
--                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
--            </intent-filter>
--            <intent-filter>
--                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
--                <data android:scheme="package" />
--            </intent-filter>                   
--        </receiver>    
--
--        <service android:name="com.baidu.android.pushservice.PushService"
--            android:exported="true"
--            android:process=":mokeepushservice"
--            android:label="MoKeePushService" >
--            <intent-filter >
--                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE"/>
--            </intent-filter>
--        </service>
--
--        <meta-data android:name="api_key" android:value="MRTYpHDAzBM5D3pfhkj9V9Gh" />
+-        <meta-data android:name="JPUSH_CHANNEL" android:value="default"/>
+-        <meta-data android:name="JPUSH_APPKEY" android:value="d1c78fa87f8836f81ed6f329" />
 -        <!-- MOKEE PUSH SERVICE END -->
 -
-         <!-- MOKEE DONATE START -->
-         <service android:name="com.paypal.android.sdk.payments.PayPalService"
-             android:exported="false" />
+-        <!-- MOKEE DONATE START -->
+-        <service android:name="com.paypal.android.sdk.payments.PayPalService"
+-            android:exported="false" />
+-
+-        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+-        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+-        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+-        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+-        <!-- MOKEE DONATE END -->
+-
+         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
+         <receiver android:name=".users.ProfileUpdateReceiver">
+             <intent-filter>
 diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
 index f369fae..206445a 100644
 --- a/packages/apps/Settings/res/xml/settings_headers.xml

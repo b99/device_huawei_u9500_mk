@@ -1,7 +1,7 @@
 
 project system/vold/
 diff --git a/system/vold/Ext4.cpp b/system/vold/Ext4.cpp
-index 3332e10..7def40d 100644
+index 7981f7e..8ec1fd1 100644
 --- a/system/vold/Ext4.cpp
 +++ b/system/vold/Ext4.cpp
 @@ -38,6 +38,7 @@
@@ -12,15 +12,15 @@ index 3332e10..7def40d 100644
  
  #include "Ext4.h"
  #include "VoldUtil.h"
-@@ -58,7 +59,7 @@ int Ext4::doMount(const char *fsPath, const char *mountPoint, bool ro, bool remo
+@@ -62,7 +63,7 @@ int Ext4::doMount(const char *fsPath, const char *mountPoint, bool ro, bool remo
      flags |= (ro ? MS_RDONLY : 0);
      flags |= (remount ? MS_REMOUNT : 0);
  
 -    if (sdcard) {
 +    if (sdcard && is_selinux_enabled()) {
          // Mount external volumes with forced context
-         data = "context=u:object_r:sdcard_external:s0";
-     }
+         if (data[0])
+             strlcat(data, ",", sizeof(data));
 diff --git a/system/vold/F2FS.cpp b/system/vold/F2FS.cpp
 index 59c3b58..20b249c 100644
 --- a/system/vold/F2FS.cpp
