@@ -18,7 +18,7 @@
 
    <!-- Active Display Notifications -->
     <string name="active_display_title">Активные уведомления</string>
-    <string name="ad_enable_summary">Показывать уведомления при получении нового уведомления</string>
+    <string name="ad_settings_summary">Сменить настройки Активных уведомлений </string>
     <string name="ad_enable_title">Включить</string>
     <string name="ad_enable_summary_on">Активные уведомления включены</string>
     <string name="ad_enable_summary_off">Активные уведомления выключены</string>
@@ -114,7 +114,7 @@
     <string name="listview_rotate">Поворот</string>
 
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">Интерполятор списков</string>
+	<string name="listview_interpolator_title">Интерполятор списков</string>
     <string name="listview_accelerate_interpolator">Ускоренный</string>
     <string name="listview_decelerate_interpolator">Замедленный</string>
     <string name="listview_accelerate_decelerate_interpolator">Ускоренный-замедленный</string>
@@ -122,8 +122,8 @@
     <string name="listview_overshoot_interpolator">Ошибающийся</string>
     <string name="listview_anticipate_overshoot_interpolator">Предсказывающий-ошибающийся</string>
     <string name="listview_bounce_interpolator">Отскакивающий</string>
-
-    <!-- MoKee Push -->
+   
+   <!-- MoKee Push -->
     <string name="mokee_push_newversion_title">Найдена новая версия MoKee OpenSource</string>
     <string name="mokee_push_newversion_msg">Новая версия готова, нажмите для подробностей!</string>
 
@@ -207,17 +207,9 @@
 
     <!-- Special Features Category-->
     <string name="special_features_category">Специальные настройки</string>
-
+    
     <!-- Sound volumes panel -->
     <string name="volume_keys_will_not_exit_silent_mode">Не отключать бесшумный режим кнопками громкости</string>
-
-     <!-- Color Picker -->
-     <string name="dialog_color_picker">Выбор цвета</string>
-     <string name="press_color_to_apply">Нажмите на цвет для применения</string>
-     <string name="hex">Hex:</string>
-     <string name="hex_hint">#ff000000</string>
-     <string name="set">Установить</string>
-     <string name="color_default">По умолчанию</string>    
 
     <!-- AP/PM Indicator -->
     <string name="status_bar_am_pm_title">Стиль AM/PM</string>
@@ -244,6 +236,7 @@
     <string name="power_saver_toggles_cpu_profile_title">Активное энергосбережение</string>
     <string name="power_saver_toggles_cpu_profile_summary">Ограничение максимальной производительности при работе устройства</string>
 
+
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Анимация выкл. экрана</string>
     <string name="screen_off_animation_fadeout">Затухание</string>
@@ -259,8 +252,8 @@
     <string name="blacklist_all_numbers_title">Все номера</string>
     <string name="blacklist_all_numbers_summary">Блокировка всех вызовов</string>
 
-    <!-- Shortcuts List -->
-    <string name="recent_shortcut_title">Ярлыки в недавних приложениях</string>
+<!-- Shortcuts List -->
+    <string name="recent_shortcut_title">Ярлыки в недав. прил.</string>
     <string name="recent_shortcut_clear_title">Очистить</string>
     <string name="recent_shortcut_gravity_title">Расположение ярлыков</string>
     <string name="recent_shortcut_gravity_summary">Расположение ярлыков в портретном режиме</string>
@@ -276,6 +269,8 @@
     <!-- Stay awake -->
     <string name="screen_timeout_awake_summary">Не засыпать</string>
 
+    <string name="battery_around_lockscreen_ring">Заряд батареи вокруг кольца</string>    
+    
     <!-- Lock Gesture settings -->
     <!-- Security & location settings screen, setting option name -->
     <string name="lockgesture_change_lock_pattern_label">Изменить жест разблокировки</string>
@@ -343,7 +338,8 @@
     <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_gesture">Жест</string>
 
-    <!-- QuickSettings style options -->
+     <!-- QuickSettings style options -->
+
     <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
     <string name="quicksettings_tiles_style_additional_options">Дополнительные настройки</string>
@@ -354,7 +350,7 @@
     <!-- Lock before unlock -->
     <string name="lock_before_unlock_title">Показывать слайдер перед безопасной разблокировкой</string>
     <string name="lock_before_unlock_summary">Показывать стандартный слайдер разблокировки до безопасной разблокировки</string>
-
+    
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker">Блокировка wakelock-ов</string>
     <string name="wakelock_blocker_title">Включить</string>
@@ -365,7 +361,7 @@
     <string name="wakelock_blocker_warning_title">Действовать с осторожностью</string>
     <string name="wakelock_blocker_warning">Блокирование wakelock-ов потенциально может привести к нестабильной работе устройства, сбою или потере данных</string>
 
-    <!-- Lockscreen Notifications -->
+      <!-- Lockscreen Notifications -->
     <string name="general">Основные</string>
     <string name="layout">Расположение</string>
     <string name="privacy">Безопасность</string>
@@ -396,19 +392,28 @@
     <string name="privacy_mode_summary">Отключает просмотр уведомлений на экране блокировки. Таким образом, вы просто видите иконки ваших уведомлений.</string>
     <string name="excluded_apps_title">Исключённые приложения</string>
     <string name="excluded_apps_summary">Уведомления от исключённых приложений не будут отображаться на экране блокировки</string>
-
-    <!-- Active Display And Lockscreen Notifications Lock -->
+    
+     <!-- Active Display And Lockscreen Notifications Lock -->
     <string name="ad_or_ln">%1$s уже включены, выключите их, пожалуйста.</string>
-
+    
     <!-- Hide overflow button -->
     <string name="hide_overflow_button_title">Скрыть кнопку действий</string>
     <string name="hide_overflow_button_summary">Скрывать 3-х точечную кнопку меню внутри приложений</string>
-    <string name="hide_overflow_button_toast">Изменения появятся после перезапуска приложений</string>
-
-    <!-- Animation Settings -->
-    <string name="animation_settings_title">анимация</string>
+    <string name="hide_overflow_button_toast">Изменения применятся после перезапуска приложения</string>
 
     <!-- Active Display & LockScreen Notification & RecentShortcut -->
     <string name="smartcontrol_settings_title">Надстройки</string> 
 
+    <!-- Animation Settings -->
+    <string name="animation_settings_title">Анимация</string>
+    
+    <string name="sweep_screen_to_wake_title">Пробуждение при поглаживании (только Нексус 5)</string>
+    
+    <string name="kernel_tweaker_title">Настройка ядра</string>
+
+    <string name="status_bar_network_traffic_style_disable">Выключен</string>
+    <string name="status_bar_network_traffic_style_up">Исходящий</string>
+    <string name="status_bar_network_traffic_style_down">Входящий</string>
+    <string name="status_bar_network_traffic_style_all">Исходящий и входящий</string>
 </resources>
+
