@@ -1,7 +1,7 @@
 
 project vendor/mk/
 diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
-index 78fe164..6c484a7 100644
+index 618d775..8d1123b 100644
 --- a/vendor/mk/config/common.mk
 +++ b/vendor/mk/config/common.mk
 @@ -8,7 +8,7 @@ endif
@@ -13,7 +13,7 @@ index 78fe164..6c484a7 100644
  MOKEEHELPER_PACKAGE_PREFIX := com.android.settings.mokee.mokeehelper
  
  ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
-@@ -107,25 +107,13 @@ PRODUCT_COPY_FILES += \
+@@ -111,25 +111,13 @@ PRODUCT_COPY_FILES += \
  # MoKee prebuilts
  PRODUCT_COPY_FILES += \
      vendor/mk/prebuilt/ota/verifier:system/bin/verifier \
@@ -40,7 +40,7 @@ index 78fe164..6c484a7 100644
  # Bring in camera effects
  PRODUCT_COPY_FILES +=  \
      vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-@@ -172,8 +160,8 @@ PRODUCT_PACKAGES += \
+@@ -176,8 +164,8 @@ PRODUCT_PACKAGES += \
      audio_effects.conf \
      Apollo \
      CMFileManager \
@@ -50,7 +50,7 @@ index 78fe164..6c484a7 100644
      MoKeeHome \
      MoKeeScreenRecorder \
      MoKeeSetupWizard
-@@ -191,7 +179,6 @@ PRODUCT_PACKAGES += \
+@@ -195,7 +183,6 @@ PRODUCT_PACKAGES += \
      mke2fs \
      tune2fs \
      bash \

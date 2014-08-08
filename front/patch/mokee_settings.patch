@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index 6f94c5b..b1a667d 100644
+index 7a3725c..b1a667d 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,17 +73,6 @@
@@ -141,13 +141,13 @@ index 6f94c5b..b1a667d 100644
 -        <service
 -            android:name="cn.jpush.android.service.DownloadService"
 -            android:enabled="true"
--            android:exported="false" >
+-            android:exported="true" >
 -        </service>
 -
 -        <service
 -            android:name="cn.jpush.android.service.PushService"
 -            android:enabled="true"
--            android:exported="false">
+-            android:exported="true">
 -            <intent-filter>
 -                <action android:name="cn.jpush.android.intent.REGISTER" />
 -                <action android:name="cn.jpush.android.intent.REPORT" />
