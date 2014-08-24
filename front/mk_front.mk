@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.policy.omap4 \
     audio.hdmi.omap4 \
-    audio.primary.omap4 \
-    audio.r_submix.default
+    audio.primary.omap4
 
 PRODUCT_PACKAGES += \
     libnetcmdiface
