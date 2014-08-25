@@ -1,10 +1,10 @@
 
 project frameworks/base/
 diff --git a/frameworks/base/packages/SettingsProvider/res/values/defaults.xml b/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
-index 268bda9..016ecd9 100644
+index 72fb626..ca893ec 100644
 --- a/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
 +++ b/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
-@@ -227,4 +227,10 @@
+@@ -230,4 +230,10 @@
  
      <!-- Default Blacklist values of Settings.System.HEADS_UP_NOTIFICATION -->
      <string name="def_heads_up_notification_blacklist_values"></string>
@@ -16,7 +16,7 @@ index 268bda9..016ecd9 100644
 +
  </resources>
 diff --git a/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java b/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
-index a657fc7..8e73cb6 100644
+index 0b34565..e154975 100644
 --- a/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
 +++ b/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
 @@ -2317,6 +2317,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
