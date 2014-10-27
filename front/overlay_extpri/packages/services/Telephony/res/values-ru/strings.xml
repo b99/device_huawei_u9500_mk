@@ -24,8 +24,6 @@
     <string name="ims_edit_title">Детали аккаунта IMS</string>
     <!-- Title displayed IMS account settings in the sip settings category. [CHAR LIMIT=NONE] -->
     <string name="ims_accounts_title">IMS аккаунт</string>
-    <!-- Text of the domain address preference. [CHAR LIMIT=NONE] -->
-    <string name="ims_domain_address_title">IMS сервер</string>
     <!-- Text of the transport type preference. [CHAR LIMIT=NONE] -->
     <string name="call_type">Тип вызова</string>
     <string name="mo_call_type_title">Тип вызова MO</string>
@@ -36,8 +34,6 @@
     <string name="ims_call_type_control">Контроль вызовов IMS</string>
     <!-- Text of the use IMS default preference. [CHAR LIMIT=NONE] -->
     <string name="ims_service_capability_title">Использовать IMS всегда</string>
-    <!-- Default to IMS call summary. -->
-    <string name="use_ims_default_summary">Использовать IMS для всех вызовов</string>
     <!-- Menu item when the menu button is pressed in the IMS account editor. [CHAR LIMIT=NONE] -->
     <string name="ims_menu_save">Сохранить</string>
     <!-- Menu item when the menu button is pressed in the IMS account editor. [CHAR LIMIT=NONE] -->

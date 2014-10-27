@@ -22,4 +22,4 @@
 
 add_lunch_combo mk_front-userdebug
 add_lunch_combo mk_front-eng
-sh device/huawei/front/patch/applypatch.sh
+sh device/huawei/front/patches/applypatch.sh

@@ -1,0 +1,47 @@
+
+project frameworks/base/
+diff --git a/frameworks/base/packages/SystemUI/res/values/config.xml b/frameworks/base/packages/SystemUI/res/values/config.xml
+index 3869db3..d780020 100644
+--- a/frameworks/base/packages/SystemUI/res/values/config.xml
++++ b/frameworks/base/packages/SystemUI/res/values/config.xml
+@@ -106,7 +106,10 @@
+     <bool name="config_show4GForLTE">true</bool>
+ 
+     <!-- milliseconds before the heads up notification auto-dismisses. -->
+-    <integer name="heads_up_notification_decay">3700</integer>
++    <integer name="heads_up_notification_decay">5000</integer>
++
++     <!-- milliseconds before the heads up notification auto-dismisses. -->
++    <integer name="heads_up_notification_decayFS">5000</integer>
+ 
+     <!-- milliseconds before the heads up notification accepts touches. -->
+     <integer name="heads_up_sensitivity_delay">700</integer>
+diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
+index 219481d..87f91ec 100644
+--- a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
++++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
+@@ -302,6 +302,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
+     // for heads up notifications
+     private HeadsUpNotificationView mHeadsUpNotificationView;
+     private int mHeadsUpNotificationDecay;
++    private int mHeadsUpNotificationDecayFS;
+ 
+     // on-screen navigation buttons
+     private NavigationBarView mNavigationBarView = null;
+@@ -1370,7 +1371,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
+                     mExpandedDesktopStyle == 1 || mExpandedDesktopStyle == 2;
+             if (!sbVisible && !userForcedExpandedDesktop) {
+                 mHandler.removeMessages(MSG_HIDE_HEADS_UP);
+-                mHandler.sendEmptyMessageDelayed(MSG_HIDE_HEADS_UP, 700);
++                mHandler.sendEmptyMessageDelayed(MSG_HIDE_HEADS_UP, mHeadsUpNotificationDecayFS);
+             } else {
+                 mHandler.removeMessages(MSG_HIDE_HEADS_UP);
+                 mHandler.sendEmptyMessageDelayed(MSG_HIDE_HEADS_UP, mHeadsUpNotificationDecay);
+@@ -3541,6 +3542,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
+         }
+ 
+         mHeadsUpNotificationDecay = res.getInteger(R.integer.heads_up_notification_decay);
++	mHeadsUpNotificationDecayFS = res.getInteger(R.integer.heads_up_notification_decayFS);
+         mRowHeight =  res.getDimensionPixelSize(R.dimen.notification_row_min_height);
+ 
+         if (false) Log.v(TAG, "updateResources");

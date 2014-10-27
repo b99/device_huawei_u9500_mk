@@ -1,7 +1,6 @@
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 $(call inherit-product, vendor/mk/config/gsm.mk)
-
 $(call inherit-product, device/huawei/front/mk_front.mk)
 
 # Release name
