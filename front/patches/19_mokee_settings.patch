@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index 9d7cd74..ed3b154 100644
+index eeb4acb..86476cf 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,17 +73,6 @@
@@ -22,7 +22,7 @@ index 9d7cd74..ed3b154 100644
      <!-- MOKEE HELPER PERMISSION START -->
      <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
      <uses-permission android:name="android.permission.GET_TASKS" />
-@@ -1954,37 +1943,6 @@
+@@ -1955,37 +1944,6 @@
          <!-- MOKEE ACTIVITIES END -->
  
          <!-- MOKEE HELPER START -->
@@ -60,7 +60,7 @@ index 9d7cd74..ed3b154 100644
          <service
              android:name="com.mokee.helper.service.MKDashClockExtension"
              android:icon="@drawable/ic_tab_installed"
-@@ -2001,40 +1959,6 @@
+@@ -2002,40 +1960,6 @@
                  android:name="description"
                  android:value="@string/extension_description" />
          </service>
@@ -101,7 +101,7 @@ index 9d7cd74..ed3b154 100644
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2223,154 +2147,6 @@
+@@ -2224,160 +2148,6 @@
              </intent-filter>
          </receiver>
  
@@ -251,16 +251,22 @@ index 9d7cd74..ed3b154 100644
 -            android:excludeFromRecents="true"
 -            android:screenOrientation="portrait"
 -            android:theme="@style/Theme.UPPay" />
+-
+-        <activity
+-            android:name="com.alipay.sdk.app.H5PayActivity"
+-            android:configChanges="orientation|keyboardHidden|navigation"
+-            android:exported="false"
+-            android:screenOrientation="behind" />
 -        <!-- MOKEE DONATE END -->
 -
          <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
          <receiver android:name=".users.ProfileUpdateReceiver">
              <intent-filter>
 diff --git a/packages/apps/Settings/res/xml/settings_headers.xml b/packages/apps/Settings/res/xml/settings_headers.xml
-index f369fae..206445a 100644
+index 64bb295..aeb3532 100644
 --- a/packages/apps/Settings/res/xml/settings_headers.xml
 +++ b/packages/apps/Settings/res/xml/settings_headers.xml
-@@ -336,17 +336,6 @@
+@@ -343,17 +343,6 @@
          android:icon="@drawable/ic_settings_performance"
          android:title="@string/performance_settings_title" />
  
