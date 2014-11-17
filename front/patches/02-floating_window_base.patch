@@ -48,7 +48,7 @@ index cf828ca..1bb72a9 100644
 +        if (makeNewWindow(context, intent, info)) {
 +            parent = null;
 +        }
-+    
++
          mWindow.setCallback(this);
          mWindow.getLayoutInflater().setPrivateFactory(this);
          if (info.softInputMode != WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED) {
@@ -246,7 +246,7 @@ index 3e0ac7e..73c5be8 100644
 +    }
  }
 diff --git a/frameworks/base/core/java/android/content/Intent.java b/frameworks/base/core/java/android/content/Intent.java
-index b7d019d..31466c6 100644
+index b7d019d..d16dbed 100644
 --- a/frameworks/base/core/java/android/content/Intent.java
 +++ b/frameworks/base/core/java/android/content/Intent.java
 @@ -3807,6 +3807,13 @@ public class Intent implements Parcelable, Cloneable {
@@ -258,13 +258,13 @@ index b7d019d..31466c6 100644
 +     *
 +     * @hide
 +     */
-+    public static final int FLAG_FLOATING_WINDOW = 0x00002000;
++    public static final int FLAG_FLOATING_WINDOW = 0x00003000;
 +    /**
       * If set, when sending a broadcast only registered receivers will be
       * called -- no BroadcastReceiver components will be launched.
       */
 diff --git a/frameworks/base/core/java/android/provider/Settings.java b/frameworks/base/core/java/android/provider/Settings.java
-index 4e3638a..544dd10 10644
+index 03c0ece..f3130f2 100644
 --- a/frameworks/base/core/java/android/provider/Settings.java
 +++ b/frameworks/base/core/java/android/provider/Settings.java
 @@ -2953,6 +2953,12 @@ public final class Settings {
@@ -429,7 +429,7 @@ index e0a7685..df341ea 100644
      <string name="accessibility_desc_add_quick_settings">Add Quick settings.</string>
  
      <string name="status_bar_notification_spam_item_title">Ignore messages like this</string>
-+    
++
 +    <!-- Floating mode -->
 +    <string name="status_bar_floating_item_title">Floating mode</string>
 +    <string name="status_bar_floating_no_interface">App provides no interface</string>
@@ -508,10 +508,10 @@ index 38f30bb..99ce84d 100644
 +    public void onChildDismissed(View v, int direction) {}
  }
 diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java
-index bb53150..0787de3 100644
+index c3e2c25..def285c 100644
 --- a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java
 +++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/BaseStatusBar.java
-@@ -72,6 +72,7 @@ import android.widget.LinearLayout;
+@@ -74,6 +74,7 @@ import android.widget.LinearLayout;
  import android.widget.PopupMenu;
  import android.widget.RemoteViews;
  import android.widget.TextView;
@@ -519,7 +519,7 @@ index bb53150..0787de3 100644
  
  import com.android.internal.statusbar.IStatusBarService;
  import com.android.internal.statusbar.StatusBarIcon;
-@@ -493,8 +494,11 @@ public abstract class BaseStatusBar extends SystemUI implements
+@@ -502,8 +503,11 @@ public abstract class BaseStatusBar extends SystemUI implements
                  final NotificationData.Entry entry = (Entry) v.getTag();
                  final StatusBarNotification sbNotification = entry.notification;
                  final String packageNameF = sbNotification.getPackageName();
@@ -531,7 +531,7 @@ index bb53150..0787de3 100644
                  mNotificationBlamePopup = new PopupMenu(mContext, v);
                  mNotificationBlamePopup.getMenuInflater().inflate(
                          R.menu.notification_popup_menu,
-@@ -539,6 +543,15 @@ public abstract class BaseStatusBar extends SystemUI implements
+@@ -548,6 +552,15 @@ public abstract class BaseStatusBar extends SystemUI implements
                          if (item.getItemId() == R.id.notification_inspect_item) {
                              startApplicationDetailsActivity(packageNameF);
                              animateCollapsePanels(CommandQueue.FLAG_EXCLUDE_NONE);
@@ -547,7 +547,7 @@ index bb53150..0787de3 100644
                          } else if (item.getItemId() == R.id.notification_inspect_item_force_stop) {
                              ActivityManager am = (ActivityManager) mContext
                                      .getSystemService(
-@@ -570,6 +583,14 @@ public abstract class BaseStatusBar extends SystemUI implements
+@@ -579,6 +592,14 @@ public abstract class BaseStatusBar extends SystemUI implements
                          return true;
                      }
                  });
@@ -562,7 +562,7 @@ index bb53150..0787de3 100644
                  mNotificationBlamePopup.show();
  
                  return true;
-@@ -900,6 +921,7 @@ public abstract class BaseStatusBar extends SystemUI implements
+@@ -909,6 +930,7 @@ public abstract class BaseStatusBar extends SystemUI implements
          }
  
          public void onClick(View v) {
@@ -570,9 +570,9 @@ index bb53150..0787de3 100644
              try {
                  // The intent we are sending is for the application, which
                  // won't have permission to immediately start an activity after
-@@ -1394,4 +1416,32 @@ public abstract class BaseStatusBar extends SystemUI implements
- 
-         return lp;
+@@ -1624,4 +1646,32 @@ public abstract class BaseStatusBar extends SystemUI implements
+             mPieControlPanel.animateCollapsePanels();
+         }
      }
 +
 +    public void launchFloating() {

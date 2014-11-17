@@ -1,7 +1,7 @@
 
 project packages/apps/Settings/
 diff --git a/packages/apps/Settings/AndroidManifest.xml b/packages/apps/Settings/AndroidManifest.xml
-index eeb4acb..86476cf 100644
+index 4e16922..fe5c8b3 100644
 --- a/packages/apps/Settings/AndroidManifest.xml
 +++ b/packages/apps/Settings/AndroidManifest.xml
 @@ -73,17 +73,6 @@
@@ -101,7 +101,7 @@ index eeb4acb..86476cf 100644
          <!-- MOKEE HELPER END -->
  
          <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
-@@ -2224,160 +2148,6 @@
+@@ -2237,160 +2161,6 @@
              </intent-filter>
          </receiver>
  

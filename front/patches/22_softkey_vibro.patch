@@ -1,10 +1,10 @@
 
 project frameworks/base/
 diff --git a/frameworks/base/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java b/frameworks/base/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-index 8e3b0c9..ffda3e9 100644
+index 65696bc..2eeff1c 100644
 --- a/frameworks/base/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
 +++ b/frameworks/base/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-@@ -2612,10 +2612,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+@@ -2622,10 +2622,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
              }
          }
  
@@ -21,7 +21,7 @@ index 8e3b0c9..ffda3e9 100644
          // First we always handle the home key here, so applications
          // can never break it, although if keyguard is on, we do let
          // it handle it, because that gives us the correct 5 second
-@@ -2699,6 +2703,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+@@ -2709,6 +2713,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
  
              // Remember that home is pressed and handle special actions.
              if (repeatCount == 0) {
@@ -29,7 +29,7 @@ index 8e3b0c9..ffda3e9 100644
                  mHomePressed = true;
                  if (mHomeDoubleTapPending) {
                      mHomeDoubleTapPending = false;
-@@ -2740,6 +2745,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+@@ -2750,6 +2755,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                      preloadRecentApps();
                  }
                  if (repeatCount == 0) {
