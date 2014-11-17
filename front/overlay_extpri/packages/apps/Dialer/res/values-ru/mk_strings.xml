@@ -37,4 +37,7 @@
     <!-- toast tips -->
     <string name="toast_no_google_search">Пожалуйста, установите Поиск Google</string>
 
+    <!-- Cal Recorder -->
+    <string name="toast_call_recorder_success">Запись сохранена в %s</string>
+
 </resources>

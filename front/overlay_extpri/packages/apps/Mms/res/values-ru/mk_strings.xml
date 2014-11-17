@@ -20,7 +20,7 @@
     <!-- Direct Call -->
     <string name="direct_call_title">Быстрый вызов</string>
     <string name="direct_call_summary">Сразу набирать номер абонента при нажатии на номер, не используя кнопку вызова</string>
-   
+
     <!-- Message Font size -->
     <string name="pref_title_mms_message_font_size">Размер шрифта сообщения</string>
     <string name="pref_summary_mms_message_font_size">Изменить размер шрифта сообщения</string>

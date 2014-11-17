@@ -19,7 +19,7 @@
     <!-- Name of the status bar as seen in the applications info settings page. [CHAR LIMIT=12] -->
     <string name="app_label">Сервисы MoKee</string>
 
-         <!-- Powersaver -->
+    <!-- Powersaver -->
     <string name="power_saver_notification_title">Энергосбережение запущено</string>
     <string name="power_saver_notification_ticker">Энергосбережение запущено</string>
     <string name="power_saver_notification_text">Мы работаем, чтобы сохранить заряд вашего аккумулятора</string>

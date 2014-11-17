@@ -42,6 +42,6 @@
     <string name="remove_ims_account">Удалить аккаунт</string>
     <!-- End of IMS settings related strings -->
 
-<string name="description_target_answer" msgid="7205604197797472471">"Ответить"</string>
+    <string name="description_target_answer" msgid="7205604197797472471">"Ответить"</string>
 
 </resources>

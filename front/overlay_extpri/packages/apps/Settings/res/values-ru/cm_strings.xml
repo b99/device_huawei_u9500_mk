@@ -31,7 +31,4 @@
     <!-- Whether to allow mock SMS -->
     <string name="allow_mock_sms">Разрешить фиктивные SMS</string>
 
-    <!-- Quick settings panel  -->
-    <string name="title_tile_compass">Компас</string>
-
 </resources>
