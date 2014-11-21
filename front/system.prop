@@ -95,3 +95,5 @@ ro.ril.fast.dormancy.rule=1
 #
 # fix deaf microphone
 ro.config.dualmic=true
+# Default storage
+persist.sys.main_storage=sdcard0
