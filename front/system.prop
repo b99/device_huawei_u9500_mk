@@ -90,5 +90,9 @@ ro.ril.fast.dormancy.rule=1
 #
 # fix deaf microphone
 ro.config.dualmic=true
+#
+# Fast mass storage
+ro.vold.umsdirtyratio=50
+#
 # Default storage
 persist.sys.main_storage=sdcard0
