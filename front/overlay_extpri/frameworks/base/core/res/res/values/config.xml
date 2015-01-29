@@ -79,7 +79,7 @@
     </string-array>
 
     <!-- Array of ConnectivityManager.TYPE_xxxx constants for networks that may only
-         be controlled by systemOrSignature apps.  -->
+         be controlled by systemOrSignature apps. -->
     <integer-array translatable="false" name="config_protectedNetworks">
     </integer-array>
 
