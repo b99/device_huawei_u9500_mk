@@ -1,10 +1,10 @@
 
 project frameworks/base/
 diff --git a/frameworks/base/packages/SettingsProvider/res/values/defaults.xml b/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
-index c22f53c..babfeb9 100644
+index 5575a06..6b04acf 100644
 --- a/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
 +++ b/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
-@@ -219,6 +219,10 @@
+@@ -222,6 +222,10 @@
      <string name="def_theme_package"></string>
      <string name="def_theme_components"></string>
  
@@ -16,10 +16,10 @@ index c22f53c..babfeb9 100644
      <integer name="def_double_tap_sleep_gesture">1</integer>
  
 diff --git a/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java b/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
-index fed0316..6295ce2 100644
+index fbae44f..aafc133 100644
 --- a/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
 +++ b/frameworks/base/packages/SettingsProvider/src/com/android/providers/settings/DatabaseHelper.java
-@@ -2354,6 +2354,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
+@@ -2357,6 +2357,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
              loadStringSetting(stmt, Settings.Global.AIRPLANE_MODE_TOGGLEABLE_RADIOS,
                      R.string.airplane_mode_toggleable_radios);
  

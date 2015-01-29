@@ -17,7 +17,7 @@ index 5e6514c..53fd772 100644
      <!-- milliseconds before the heads up notification accepts touches. -->
      <integer name="heads_up_sensitivity_delay">700</integer>
 diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
-index c30b829..527cf97 100644
+index c25af13..9b4b05f 100644
 --- a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
 +++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBar.java
 @@ -304,6 +304,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
@@ -28,7 +28,7 @@ index c30b829..527cf97 100644
  
      // on-screen navigation buttons
      private NavigationBarView mNavigationBarView = null;
-@@ -1489,7 +1490,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
+@@ -1491,7 +1492,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                      mExpandedDesktopStyle == 1 || mExpandedDesktopStyle == 2;
              if (!sbVisible && !userForcedExpandedDesktop) {
                  mHandler.removeMessages(MSG_HIDE_HEADS_UP);
@@ -37,7 +37,7 @@ index c30b829..527cf97 100644
              } else {
                  mHandler.removeMessages(MSG_HIDE_HEADS_UP);
                  mHandler.sendEmptyMessageDelayed(MSG_HIDE_HEADS_UP, mHeadsUpNotificationDecay);
-@@ -3699,6 +3700,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
+@@ -3701,6 +3702,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
          }
  
          mHeadsUpNotificationDecay = res.getInteger(R.integer.heads_up_notification_decay);
