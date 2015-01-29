@@ -201,7 +201,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.jit.codecachesize=0 \
     dalvik.vm.debug.alloc=0 \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.lockprof.threshold=500 \
