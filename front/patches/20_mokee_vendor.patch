@@ -1,7 +1,7 @@
 
 project vendor/mk/
 diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
-index 2b5aa6b..5f46674 100644
+index e40154a..106bdd5 100644
 --- a/vendor/mk/config/common.mk
 +++ b/vendor/mk/config/common.mk
 @@ -3,7 +3,7 @@ PRODUCT_BRAND ?= mokee
@@ -45,24 +45,14 @@ index 2b5aa6b..5f46674 100644
  # Bring in camera effects
  PRODUCT_COPY_FILES +=  \
      vendor/mk/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-@@ -188,8 +171,8 @@ PRODUCT_PACKAGES += \
+@@ -188,6 +171,7 @@ PRODUCT_PACKAGES += \
      audio_effects.conf \
      Apollo \
      CMFileManager \
 +    LatinIME \
      LockClock \
--    MoKeeHelper \
+     MoKeeHelper \
      MoKeeHome \
-     MoKeeScreenRecorder \
-     MoKeeSetupWizard
-@@ -207,7 +190,6 @@ PRODUCT_PACKAGES += \
-     mke2fs \
-     tune2fs \
-     bash \
--    nano \
-     htop \
-     powertop \
-     lsof \
 diff --git a/vendor/mk/config/common_full.mk b/vendor/mk/config/common_full.mk
 index 8cd6d33..96e0f84 100644
 --- a/vendor/mk/config/common_full.mk
