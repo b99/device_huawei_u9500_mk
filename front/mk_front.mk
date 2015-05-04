@@ -34,13 +34,10 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinymix \
     tinyplay \
-    libaudioutils
-
-# Hardware HALs
-PRODUCT_PACKAGES += \
+    libaudioutils \
+    audio.r_submix.default \
     audio.a2dp.default \
-    audio.usb.default \
-    gralloc.omap4.so
+    audio.usb.default
 
 PRODUCT_PACKAGES += \
     libnetcmdiface
@@ -48,9 +45,16 @@ PRODUCT_PACKAGES += \
 # PowerHAL
 PRODUCT_PACKAGES += \
     hwcomposer.front \
+    gralloc.omap4.so \
     libedid \
-    libion_ti \
     libstagefrighthw
+
+# OMAP4
+PRODUCT_PACKAGES += \
+    libion_ti \
+    smc_pa_ctrl \
+    tf_daemon \
+    libtf_crypto_sst
 
 # Symlinks
 PRODUCT_PACKAGES += \
@@ -70,10 +74,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/prebuilt/etc/utils/optimizestorage:system/etc/utils/optimizestorage \
     $(COMMON_FOLDER)/prebuilt/etc/init.d/11frandom:system/etc/init.d/11frandom
 
-# Tuning scripts
-PRODUCT_COPY_FILES += \
-    $(COMMON_FOLDER)/prebuilt/sbin/okernel1:root/sbin/okernel1
-
 # Media / Audio
 PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/configs/media_profiles.xml:system/etc/media_profiles.xml \
@@ -87,6 +87,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/configs/gps.conf:system/etc/gps.conf \
     $(COMMON_FOLDER)/configs/gpsconfig.xml:system/etc/gpsconfig.xml
+
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(COMMON_FOLDER)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(COMMON_FOLDER)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(COMMON_FOLDER)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # Torch
 PRODUCT_PACKAGES += \
@@ -163,10 +169,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.adb.notify=0 \
     persist.call_recording.enabled=1
 
-# SGX540 is slower with the scissor optimization enabled
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.disable_scissor_opt=true
-
 # adb has root
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
@@ -179,8 +181,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.dexopt-data-only=1 \
-    dalvik.vm.verify-bytecode=false \
-    dalvik.vm.dexopt-flags=v=a,o=v,m=y
+    dalvik.vm.verify-bytecode=false
 
 # Memory management
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -201,7 +202,5 @@ BOARD_WLAN_DEVICE_REV        := bcm4330_b1
 WIFI_BAND                    := 802_11_ABG
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-#$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)

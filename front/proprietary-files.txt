@@ -7,6 +7,8 @@ bin/hostapd
 bin/IMCdownload_App
 bin/Injection_nv
 bin/load_oemlogo
+bin/smc_pa_ctrl
+bin/tf_daemon
 
 # etc
 etc/es305img.bin
