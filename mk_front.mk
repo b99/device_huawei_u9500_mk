@@ -46,7 +46,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.primary.omap4 \
     gralloc.omap4.so \
-    power.front \
     camera.omap4 \
     lights.omap4 \
     libstagefrighthw
