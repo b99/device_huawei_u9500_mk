@@ -198,15 +198,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale.language=ru \
     ro.product.locale.region=RU
 
-# simple root/adb...
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    persist.adb.notify=0 \
-    ro.debuggable=1 \
-    ro.debug_level=0x4948 \
-    persist.service.adb.enable=1
-
 $(call inherit-product, vendor/huawei/front/front-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
