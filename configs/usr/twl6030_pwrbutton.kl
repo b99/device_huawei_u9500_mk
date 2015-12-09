@@ -12,6 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#durui change from 107 to 116 for compatable with our driver
-#key 107  POWER  WAKE
 key 116  POWER  WAKE

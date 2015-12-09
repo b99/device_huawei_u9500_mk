@@ -1,0 +1,40 @@
+
+project vendor/mk/
+diff --git a/vendor/mk/config/common.mk b/vendor/mk/config/common.mk
+index 3ecd738..4d13bf6 100644
+--- a/vendor/mk/config/common.mk
++++ b/vendor/mk/config/common.mk
+@@ -259,7 +253,7 @@ ifndef MK_BUILDTYPE
+     ifdef MK_EXPERIMENTAL
+         MK_BUILDTYPE := EXPERIMENTAL
+     else
+-        MK_BUILDTYPE := UNOFFICIAL
++        MK_BUILDTYPE := ShevT
+     endif
+ endif
+ 
+diff --git a/vendor/mk/config/common_full.mk b/vendor/mk/config/common_full.mk
+index 14f9256..6587a90 100644
+--- a/vendor/mk/config/common_full.mk
++++ b/vendor/mk/config/common_full.mk
+@@ -6,20 +6,10 @@ include vendor/mk/config/mk_audio.mk
+ 
+ # Optional MK packages
+ PRODUCT_PACKAGES += \
+-    Galaxy4 \
+-    HoloSpiralWallpaper \
+-    LiveWallpapers \
+-    LiveWallpapersPicker \
+-    MagicSmokeWallpapers \
+-    NoiseField \
+-    PhaseBeam \
+-    VisualizationWallpapers \
+-    PhotoTable \
+     SoundRecorder
+ 
+ # Extra tools in MK
+ PRODUCT_PACKAGES += \
+-    vim \
+     zip \
+     unrar \
+     curl
